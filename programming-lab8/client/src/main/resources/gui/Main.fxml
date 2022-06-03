@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane dividerPositions="0.216" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="560.0" minWidth="1038.0" prefHeight="560.0" prefWidth="1038.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+  <items>
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="252.0" minHeight="560.0" minWidth="250.0" prefHeight="519.0" prefWidth="252.0">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutX="-4.0" layoutY="-5.0" prefHeight="546.0" prefWidth="259.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <MenuBar id="menuBar">
+                     <menus>
+                        <Menu id="languageMenu" mnemonicParsing="false" text="%language">
+                           <items>
+                              <MenuItem id="englishPick" mnemonicParsing="false" onAction="#englishPick" text="English" />
+                              <MenuItem id="russianPick" mnemonicParsing="false" onAction="#russianPick" text="Русский" />
+                              <MenuItem id="netherlandsPick" mnemonicParsing="false" onAction="#netherlandsPick" text="Nederlands" />
+                              <MenuItem id="croatianPick" mnemonicParsing="false" onAction="#croatianPick" text="Hrvatski" />
+                              <MenuItem id="spanishPick" mnemonicParsing="false" onAction="#spanishPick" text="Español" />
+                           </items>
+                        </Menu>
+                     </menus>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </MenuBar>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="usernameLabel" text="%you logined as">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="username" text="&lt;username&gt;">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Button fx:id="dbInfo" mnemonicParsing="false" onAction="#info" prefHeight="31.0" prefWidth="160.0" text="%info">
+                     <VBox.margin>
+                        <Insets bottom="2.0" top="2.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="add" mnemonicParsing="false" onAction="#add" prefHeight="31.0" prefWidth="160.0" text="%add">
+                     <VBox.margin>
+                        <Insets bottom="2.0" top="2.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="delete" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="160.0" text="%delete">
+                     <VBox.margin>
+                        <Insets bottom="2.0" top="2.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="descendingSalaries" mnemonicParsing="false" onAction="#descendingSalaries" prefHeight="31.0" prefWidth="160.0" text="%descendingSalaries">
+                     <VBox.margin>
+                        <Insets bottom="2.0" top="2.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="update" mnemonicParsing="false" onAction="#update" prefHeight="31.0" prefWidth="160.0" text="%update">
+                     <VBox.margin>
+                        <Insets bottom="2.0" top="2.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="checkConnection" mnemonicParsing="false" onAction="#checkConnection" prefHeight="31.0" prefWidth="160.0" text="%checkConnection">
+                     <VBox.margin>
+                        <Insets bottom="2.0" top="2.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="executeScript" mnemonicParsing="false" onAction="#executeScript" prefHeight="31.0" prefWidth="160.0" text="%executeScript" />
+                  <TextArea fx:id="textArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="255.0" prefWidth="239.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                     </VBox.margin>
+                  </TextArea>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+    <AnchorPane fx:id="status_filter" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="560" minWidth="760.0" prefHeight="537.0" prefWidth="930.0">
+         <children>
+            <HBox minWidth="760.0" prefHeight="540.0" prefWidth="970.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TabPane maxHeight="1.7976931348623157E308" maxWidth="650.0" minHeight="300.0" minWidth="300.0" prefHeight="593.0" prefWidth="547.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="%visualization">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane hvalue="0.5" prefHeight="509.0" prefWidth="527.0" vvalue="0.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <Canvas fx:id="canvas" height="600.0" width="600.0" />
+                                       </content></ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="%table">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="509.0" prefWidth="560.0">
+                                 <children>
+                                    <ScrollPane minViewportWidth="1205.0" minWidth="-Infinity" prefViewportWidth="1205.0" prefWidth="1125.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="1205.0">
+                                             <children>
+                                                <TableView fx:id="mainTable" layoutX="-2.0" layoutY="-2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="447.0" prefWidth="1125.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-325.33333333333326" AnchorPane.topAnchor="0.0">
+                                                  <columns>
+                                                      <TableColumn fx:id="id" prefWidth="45" text="%id" />
+                                                      <TableColumn fx:id="name" prefWidth="80" text="%name" />
+                                                      <TableColumn fx:id="coordinates" prefWidth="95" text="%coordinates" />
+                                                      <TableColumn fx:id="created" prefWidth="160.0" text="%created" />
+                                                      <TableColumn fx:id="salary" prefWidth="55" text="%salary" />
+                                                      <TableColumn fx:id="startDate" prefWidth="200.0" text="%start_date" />
+                                                      <TableColumn fx:id="endDate" prefWidth="120.0" text="%end_date" />
+                                                      <TableColumn fx:id="status" text="%status" />
+                                                      <TableColumn fx:id="height" prefWidth="45" text="%height" />
+                                                      <TableColumn fx:id="eyeColor" text="%eye_color" />
+                                                      <TableColumn fx:id="hairColor" text="%hair_color" />
+                                                      <TableColumn fx:id="nationality" prefWidth="85.0" text="%nationality" />
+                                                      <TableColumn fx:id="creator" text="%creator" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+                  <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="370.0" minWidth="370" prefHeight="537.0" prefWidth="370.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="filters" text="%filters">
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </VBox.margin></Label>
+                        <GridPane alignment="TOP_CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="180.0" prefWidth="180.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="180.0" prefWidth="180.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="120.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="160.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Group>
+                                 <children>
+                                    <Label fx:id="name_filter_label" text="%by_name" />
+                                    <TextField fx:id="nameFilter" layoutX="11.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="20.0" prefWidth="143.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </Group>
+                              <Group GridPane.columnIndex="1">
+                                 <children>
+                                    <Label fx:id="coordinates_filter_label" text="%by_distance_to_O" />
+                                    <TextField fx:id="coordinatesFilter" layoutX="11.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </Group>
+                              <Group GridPane.rowIndex="1">
+                                 <children>
+                                    <Label fx:id="creation_date_filter_label" text="%by_creation_date" />
+                                    <Label fx:id="creation_date_filter_from_label" layoutX="18.0" layoutY="19.0" text="%from" />
+                                    <DatePicker fx:id="creationDateFilterFrom" layoutX="11.0" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="149.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </DatePicker>
+                                    <Label fx:id="creation_date_filter_till_label" layoutX="20.0" layoutY="69.0" text="%till" />
+                                    <DatePicker fx:id="creationDateFilterTill" layoutX="11.0" layoutY="86.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="149.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </DatePicker>
+                                 </children>
+                              </Group>
+                              <Group GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label fx:id="salary_filter_label" text="%by_salary" />
+                                    <Label fx:id="salary_filter_from_label" layoutY="20.0" text="%from" />
+                                    <TextField fx:id="salaryFilterFrom" layoutX="42.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="116.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </TextField>
+                                    <Label fx:id="salary_filter_to_label" layoutY="50.0" text="%to" />
+                                    <TextField fx:id="salaryFilterTo" layoutX="42.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="116.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </Group>
+                              <Group GridPane.rowIndex="2">
+                                 <children>
+                                    <Label fx:id="start_date_filter_label" text="%by_start_date" />
+                                    <Label fx:id="start_date_filter_from_label" layoutX="18.0" layoutY="20.0" text="%from" />
+                                    <DatePicker fx:id="startDateFilterFrom" layoutX="11.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="149.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </DatePicker>
+                                    <DatePicker fx:id="startDateFilterTill" layoutX="11.0" layoutY="90.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="149.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </DatePicker>
+                                    <Label fx:id="start_date_filter_till_label" layoutX="18.0" layoutY="70.0" text="%till" />
+                                 </children>
+                              </Group>
+                              <Group GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label fx:id="end_date_filter" text="%by_end_date" />
+                                    <Label fx:id="end_date_filter_from_label" layoutX="18.0" layoutY="20.0" text="%from" />
+                                    <Label fx:id="end_date_filter_till_label" layoutX="18.0" layoutY="70.0" text="%till" />
+                                    <DatePicker fx:id="endDateFilterFrom" layoutX="11.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="149.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </DatePicker>
+                                    <DatePicker fx:id="endDateFilterTill" layoutX="11.0" layoutY="90.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="149.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </DatePicker>
+                                 </children>
+                              </Group>
+                              <Group GridPane.rowIndex="3">
+                                 <children>
+                                    <ChoiceBox fx:id="statusFilter" layoutX="9.0" layoutY="19.0" prefWidth="150.0" />
+                                    <Label fx:id="status_filter_label" text="%by_status" />
+                                 </children>
+                              </Group>
+                              <Group GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label fx:id="height_filter_label" text="%by_height" />
+                                    <Label fx:id="height_filter_from_label" layoutY="20.0" text="%from" />
+                                    <TextField fx:id="heightFilterFrom" layoutX="42.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="116.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </TextField>
+                                    <Label fx:id="height_filter_to_label" layoutY="50.0" text="%to" />
+                                    <TextField fx:id="heightFilterTo" layoutX="42.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="116.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </Group>
+                              <Group GridPane.rowIndex="4">
+                                 <children>
+                                    <Label fx:id="eye_color_filter_label" text="%by_eye_color" />
+                                    <ChoiceBox fx:id="eyeColorFilter" layoutX="11.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="150.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </ChoiceBox>
+                                 </children>
+                              </Group>
+                              <Group GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <children>
+                                    <Label fx:id="hair_color_filter_label" text="%by_hair_color" />
+                                    <ChoiceBox fx:id="hairColorFilter" layoutX="11.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="150.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </ChoiceBox>
+                                 </children>
+                              </Group>
+                              <Group GridPane.rowIndex="5">
+                                 <children>
+                                    <Label fx:id="nationality_filter_label" text="%by_nationality" />
+                                    <ChoiceBox fx:id="nationalityFilter" layoutX="11.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="150.0">
+                                       <padding>
+                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                       </padding>
+                                    </ChoiceBox>
+                                 </children>
+                              </Group>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+  </items>
+</SplitPane>
